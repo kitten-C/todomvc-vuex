@@ -1,29 +1,39 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <section class="todoapp" id="app">
+      <todoheader></todoheader>
+      <todos></todos>
+      <todofooter></todofooter>
+    </section>
+    <footer class="info">
+      <p>Double-click to edit a todo</p>
+      <!-- Remove the below line ↓ -->
+      <p>
+        Template by
+        <a href="http://sindresorhus.com">Sindre Sorhus</a>
+      </p>
+      <!-- Change this out with your name and url ↓ -->
+      <p>
+        Created by
+        <a href="http://todomvc.com">you</a>
+      </p>
+      <p>
+        Part of
+        <a href="http://todomvc.com">TodoMVC</a>
+      </p>
+    </footer>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import todoheader from "./components/TodoHeader";
+import todos from "./components/Todos";
+import todofooter from "./components/TodoFooder";
+export default {
+  components: {
+    todoheader,
+    todos,
+    todofooter
   }
-}
-</style>
+};
+</script>
